@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import Lowlight from "react-lowlight";
 import js from "highlight.js/lib/languages/javascript";
-import { equals } from "ramda";
+import equals from "ramda/src/equals";
 
 Lowlight.registerLanguage("js", js);
 

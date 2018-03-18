@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { media } from "../../helpers/media";
 
-export default styled.section`
+export default styled.main`
   box-sizing: border-box;
   width: 90%;
   margin: 0 auto;

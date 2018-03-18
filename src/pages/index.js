@@ -2,13 +2,13 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
-import { pathOr } from "ramda";
+import pathOr from "ramda/src/pathOr";
 import { Helmet } from "react-helmet";
 import PostGrid from "../components/PostGrid";
 import config from "../config";
 import { media } from "../helpers/media";
 
-const Home = styled.section`
+const Home = styled.main`
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -65,7 +65,7 @@ export default class extends Component {
     );
 
     return (
-      <Home>
+      <Home role="main">
         <Helmet>
           {/* eslint-disable jsx-a11y/accessible-emoji */}
           <title>

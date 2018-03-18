@@ -5,7 +5,7 @@ import PageContent from "../components/PageContent";
 import config from "../config";
 
 export default () => (
-  <PageContent>
+  <PageContent role="main">
     <Helmet>
       {/* eslint-disable jsx-a11y/accessible-emoji */}
       <title>🌟 About | bekapod.me</title>

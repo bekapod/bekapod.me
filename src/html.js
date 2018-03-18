@@ -22,7 +22,7 @@ module.exports = class HTML extends Component {
       );
     }
     return (
-      <html {...this.props.htmlAttributes} lang="en">
+      <html {...this.props.htmlAttributes} lang="en" dir="ltr">
         <head>
           <meta charSet="utf-8" />
           <meta httpEquiv="x-ua-compatible" content="ie=edge" />

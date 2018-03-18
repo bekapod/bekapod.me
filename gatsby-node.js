@@ -8,6 +8,7 @@ const path = require("path");
 const slash = require("slash");
 const { pathOr } = require("ramda");
 const routes = require("./src/routes");
+const webpack = require("webpack");
 
 exports.createPages = ({ graphql, boundActionCreators }) => {
   const { createPage } = boundActionCreators;
@@ -29,7 +30,11 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
       }
 
       const pageTemplate = path.resolve("./src/templates/article.js");
-      const blogPosts = pathOr([], ['data', 'allContentfulBlogPost', 'edges'], result);
+      const blogPosts = pathOr(
+        [],
+        ["data", "allContentfulBlogPost", "edges"],
+        result
+      );
 
       blogPosts.forEach((edge, index) => {
         createPage({
@@ -46,4 +51,13 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
       resolve();
     });
   });
+};
+
+exports.modifyWebpackConfig = ({ config }) => {
+  config.plugin("moment-locale-en", webpack.ContextReplacementPlugin, [
+    /moment[\/\\]locale$/,
+    /en/
+  ]);
+
+  return config;
 };

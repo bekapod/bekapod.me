@@ -2,7 +2,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import Markdown from "react-markdown";
-import { pathOr } from "ramda";
+import pathOr from "ramda/src/pathOr";
 import { Helmet } from "react-helmet";
 import routes from "../routes";
 import config from "../config";
@@ -30,7 +30,7 @@ export default class extends Component {
     const { current: article, next, prev } = this.props.data;
 
     return (
-      <PageContent>
+      <PageContent role="main">
         <Helmet>
           {/* eslint-disable jsx-a11y/accessible-emoji */}
           <title>🌟 {article.title} | Writing | bekapod.me</title>
@@ -38,14 +38,16 @@ export default class extends Component {
           <link rel="canonical" href={`${config.baseUrl}/about`} />
         </Helmet>
 
-        <h1>{article.title}</h1>
-        <PostDate date={article.createdAt} />
-        <Markdown
-          source={pathOr("", ["content", "content"])(article)}
-          renderers={{
-            code: Code
-          }}
-        />
+        <article>
+          <h1>{article.title}</h1>
+          <PostDate date={article.createdAt} />
+          <Markdown
+            source={pathOr("", ["content", "content"])(article)}
+            renderers={{
+              code: Code
+            }}
+          />
+        </article>
 
         <JumpLinkWrapper>
           {prev && (

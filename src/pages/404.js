@@ -12,7 +12,7 @@ const GiantEmoji = styled.div`
 `;
 
 export default () => (
-  <StyledPageContent>
+  <StyledPageContent role="main">
     <Helmet>
       {/* eslint-disable jsx-a11y/accessible-emoji */}
       <title>🌟 404 Not Found | bekapod.me</title>

@@ -6,6 +6,7 @@ module.exports = {
   plugins: [
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-styled-components",
+    "gatsby-plugin-webpack-bundle-analyzer",
     {
       resolve: "gatsby-source-contentful",
       options: {

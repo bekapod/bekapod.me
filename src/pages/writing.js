@@ -1,7 +1,7 @@
 /* eslint-disable react/prefer-stateless-function */
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import { pathOr } from "ramda";
+import pathOr from "ramda/src/pathOr";
 import { Helmet } from "react-helmet";
 import PageContent from "../components/PageContent";
 import PostList from "../components/PostList";
@@ -30,7 +30,7 @@ export default class extends Component {
     );
 
     return (
-      <PageContent>
+      <PageContent role="main">
         <Helmet>
           {/* eslint-disable jsx-a11y/accessible-emoji */}
           <title>🌟 Writing | bekapod.me</title>
