@@ -15,7 +15,7 @@ module.exports = {
       }
     },
     {
-      resolve: "gatsby-plugin-netlify-headers",
+      resolve: "gatsby-plugin-netlify",
       options: {
         headers: {
           "/": ["Cache-Control: public, max-age=600"],
