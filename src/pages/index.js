@@ -2,6 +2,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
+import { pathOr } from "ramda";
 import PostGrid from "../components/PostGrid";
 import { media } from "../helpers/media";
 
@@ -19,7 +20,6 @@ const Title = styled.h1`
   align-self: stretch;
   margin-top: 0;
   text-align: center;
-  text-transform: uppercase;
 `;
 
 const Description = styled.p`
@@ -46,16 +46,26 @@ export default class extends Component {
       latest: PropTypes.shape({
         edges: PropTypes.arrayOf(PropTypes.shape({ node: PropTypes.shape }))
       })
-    }).isRequired
+    })
+  };
+
+  static defaultProps = {
+    data: {
+      latest: {
+        edges: []
+      }
+    }
   };
 
   render() {
-    const latest = this.props.data.latest.edges.map(article => article.node);
+    const latest = pathOr([], ["latest", "edges"], this.props.data).map(
+      article => article.node
+    );
 
     return (
       <Home>
         <Title>
-          {"Hi, I'm Becky"}
+          {"Hi, I'm Becky "}
           <span role="img" aria-label="Waving emoji">
             👋🏻
           </span>

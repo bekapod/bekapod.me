@@ -1,6 +1,7 @@
 /* eslint-disable react/prefer-stateless-function */
 import React, { Component } from "react";
 import PropTypes from "prop-types";
+import { pathOr } from "ramda";
 import PageContent from "../components/PageContent";
 import PostList from "../components/PostList";
 
@@ -10,16 +11,26 @@ export default class extends Component {
       all: PropTypes.shape({
         edges: PropTypes.arrayOf(PropTypes.shape({ node: PropTypes.shape }))
       })
-    }).isRequired
+    })
+  };
+
+  static defaultProps = {
+    data: {
+      all: {
+        edges: []
+      }
+    }
   };
 
   render() {
-    const all = this.props.data.all.edges.map(article => article.node);
+    const all = pathOr([], ["all", "edges"], this.props.data).map(
+      article => article.node
+    );
 
     return (
       <PageContent>
         <h1>Writing</h1>
-        <PostList posts={all} />
+        {all.length ? <PostList posts={all} /> : <p>Nothing here yet.</p>}
       </PageContent>
     );
   }

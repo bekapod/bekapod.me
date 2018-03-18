@@ -29,7 +29,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
       }
 
       const pageTemplate = path.resolve("./src/templates/article.js");
-      const blogPosts = result.data.allContentfulBlogPost.edges;
+      const blogPosts = pathOr([], ['data', 'allContentfulBlogPost', 'edges'], result);
 
       blogPosts.forEach((edge, index) => {
         createPage({
