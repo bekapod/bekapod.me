@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import Markdown from "react-markdown";
 import { pathOr } from "ramda";
 import routes from "../routes";
+import config from "../config";
 import PageContent from "../components/PageContent";
 import PostDate from "../components/PostDate";
 import Code from "../components/Code";
@@ -56,9 +57,9 @@ export default class extends Component {
         </JumpLinkWrapper>
 
         <Comments
-          shortname={process.env.DISQUS_SHORT_NAME}
+          shortname={config.disqusShortName}
           identifier={article.id}
-          url={`${process.env.DISQUS_PAGE_URL}${location.pathname}`}
+          url={`${config.disqusPageUrl}${location.pathname}`}
         />
       </PageContent>
     );
