@@ -131,6 +131,7 @@ export default () => (
         href="https://github.com/bekapod/"
         target="_blank"
         rel="nofollow noopener noreferrer"
+        title="My github page"
       >
         <NavigationIcon className="icon-github" />
       </a>
@@ -139,6 +140,7 @@ export default () => (
         href="https://twitter.com/bekapod"
         target="_blank"
         rel="nofollow noopener noreferrer"
+        title="My twitter feed"
       >
         <NavigationIcon className="icon-twitter" />
       </a>
@@ -147,6 +149,7 @@ export default () => (
         href="https://www.linkedin.com/in/rebekah-jones-b3622a40/"
         target="_blank"
         rel="nofollow noopener noreferrer"
+        title="My linkedin profile"
       >
         <NavigationIcon className="icon-linkedin" />
       </a>
