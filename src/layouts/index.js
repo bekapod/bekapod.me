@@ -59,7 +59,7 @@ injectGlobal`
     color: var(--color-gray-dark);
     font-family: var(--font-family-base);
     font-size: var(--font-size-base);
-    font-weight: 300;
+    font-weight: 400;
     line-height: ${lineHeight("base")};
     background-color: var(--color-gray-light);
     -webkit-font-smoothing: antialiased;
