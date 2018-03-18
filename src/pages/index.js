@@ -3,7 +3,9 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import { pathOr } from "ramda";
+import { Helmet } from "react-helmet";
 import PostGrid from "../components/PostGrid";
+import config from "../config";
 import { media } from "../helpers/media";
 
 const Home = styled.section`
@@ -64,6 +66,15 @@ export default class extends Component {
 
     return (
       <Home>
+        <Helmet>
+          {/* eslint-disable jsx-a11y/accessible-emoji */}
+          <title>
+            🌟 Becky Jones, bekapod, front-end developer | bekapod.me
+          </title>
+          {/* eslint-enable jsx-a11y/accessible-emoji */}
+          <link rel="canonical" href={config.baseUrl} />
+        </Helmet>
+
         <Title>
           {"Hi, I'm Becky "}
           <span role="img" aria-label="Waving emoji">

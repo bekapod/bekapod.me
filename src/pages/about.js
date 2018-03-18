@@ -1,9 +1,18 @@
 // @flow
 import React from "react";
+import { Helmet } from "react-helmet";
 import PageContent from "../components/PageContent";
+import config from "../config";
 
 export default () => (
   <PageContent>
+    <Helmet>
+      {/* eslint-disable jsx-a11y/accessible-emoji */}
+      <title>🌟 About | bekapod.me</title>
+      {/* eslint-enable jsx-a11y/accessible-emoji */}
+      <link rel="canonical" href={`${config.baseUrl}/about`} />
+    </Helmet>
+
     <h1>About Me</h1>
     <p>
       {"Hi I'm Becky and I'm a front-end dev at "}

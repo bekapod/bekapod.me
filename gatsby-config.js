@@ -3,9 +3,6 @@ require("dotenv").config({
 });
 
 module.exports = {
-  siteMetadata: {
-    title: "Home | bekapod.me"
-  },
   plugins: [
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-styled-components",

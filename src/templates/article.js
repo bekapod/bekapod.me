@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import Markdown from "react-markdown";
 import { pathOr } from "ramda";
+import { Helmet } from "react-helmet";
 import routes from "../routes";
 import config from "../config";
 import PageContent from "../components/PageContent";
@@ -30,6 +31,13 @@ export default class extends Component {
 
     return (
       <PageContent>
+        <Helmet>
+          {/* eslint-disable jsx-a11y/accessible-emoji */}
+          <title>🌟 {article.title} | Writing | bekapod.me</title>
+          {/* eslint-enable jsx-a11y/accessible-emoji */}
+          <link rel="canonical" href={`${config.baseUrl}/about`} />
+        </Helmet>
+
         <h1>{article.title}</h1>
         <PostDate date={article.createdAt} />
         <Markdown

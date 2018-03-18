@@ -2,8 +2,10 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { pathOr } from "ramda";
+import { Helmet } from "react-helmet";
 import PageContent from "../components/PageContent";
 import PostList from "../components/PostList";
+import config from "../config";
 
 export default class extends Component {
   static propTypes = {
@@ -29,6 +31,13 @@ export default class extends Component {
 
     return (
       <PageContent>
+        <Helmet>
+          {/* eslint-disable jsx-a11y/accessible-emoji */}
+          <title>🌟 Writing | bekapod.me</title>
+          {/* eslint-enable jsx-a11y/accessible-emoji */}
+          <link rel="canonical" href={`${config.baseUrl}/writing`} />
+        </Helmet>
+
         <h1>Writing</h1>
         {all.length ? <PostList posts={all} /> : <p>Nothing here yet.</p>}
       </PageContent>

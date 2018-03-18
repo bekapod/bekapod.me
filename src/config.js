@@ -1,4 +1,5 @@
 export default {
   disqusShortName: "bekapod",
-  disqusPageUrl: "https://www.bekapod.me"
+  disqusPageUrl: "https://bekapod.me",
+  baseUrl: "https://bekapod.me"
 };
