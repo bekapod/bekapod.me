@@ -1,0 +1,54 @@
+{
+  "name": "gatsby-starter-default",
+  "description": "Gatsby default starter",
+  "version": "1.0.0",
+  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "dependencies": {
+    "@sonarwhal/configuration-web-recommended": "^2.1.0",
+    "gatsby": "^1.9.215",
+    "gatsby-link": "^1.6.37",
+    "gatsby-plugin-react-helmet": "^2.0.5",
+    "gatsby-plugin-styled-components": "^2.0.8",
+    "gatsby-source-contentful": "^1.3.38",
+    "highlight.js": "^9.12.0",
+    "moment": "^2.21.0",
+    "polished": "^1.9.2",
+    "prop-types": "^15.6.0",
+    "ramda": "^0.25.0",
+    "react-disqus-thread": "^0.4.0",
+    "react-helmet": "^5.2.0",
+    "react-lowlight": "^2.0.0",
+    "react-markdown": "^3.2.2",
+    "slash": "^1.0.0",
+    "styled-components": "^3.1.6"
+  },
+  "keywords": [
+    "gatsby"
+  ],
+  "license": "MIT",
+  "main": "n/a",
+  "scripts": {
+    "build": "gatsby build",
+    "serve:build": "http-server public",
+    "develop": "gatsby develop",
+    "format": "prettier --write \"src/**/*.js\"",
+    "lint": "eslint src/**/*.js",
+    "sonarwhal": "sonarwhal",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "@sonarwhal/formatter-codeframe": "^2.0.0",
+    "@sonarwhal/formatter-stylish": "^2.0.0",
+    "babel-eslint": "^8.2.2",
+    "eslint": "^4.19.0",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-import": "^2.9.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-prettier": "^2.6.0",
+    "eslint-plugin-react": "^7.7.0",
+    "http-server": "^0.11.1",
+    "prettier": "^1.10.2",
+    "sonarwhal": "^1.1.0"
+  }
+}
