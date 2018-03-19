@@ -5,6 +5,7 @@ node_modules
 .env.development
 .env.production
 .vscode
+drafts
 # Build directory
 public/
 .DS_Store
