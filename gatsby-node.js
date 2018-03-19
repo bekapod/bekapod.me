@@ -7,8 +7,10 @@
 const path = require("path");
 const slash = require("slash");
 const { pathOr } = require("ramda");
-const routes = require("./src/routes");
 const webpack = require("webpack");
+const routes = require("./src/routes");
+const sitemap = require("./src/sitemap");
+const config = require("./src/config");
 
 exports.createPages = ({ graphql, boundActionCreators }) => {
   const { createPage } = boundActionCreators;
@@ -61,3 +63,51 @@ exports.modifyWebpackConfig = ({ config }) => {
 
   return config;
 };
+
+exports.onPostBuild = async ({ graphql }) => {
+  const pages = [
+    { route: '/', changefreq: 'weekly', priority: 1 },
+    { route: '/about', changefreq: 'monthly', priority: 0.5 },
+    { route: '/writing', changefreq: 'daily', priority: 0.8 }
+  ];
+
+  try {
+    const blogPostResponse = await graphql(`
+      {
+        allContentfulBlogPost(sort: { fields: createdAt, order: DESC }) {
+          edges {
+            node {
+              slug
+              updatedAt
+            }
+          }
+        }
+      }
+    `)
+    const blogPosts = pathOr(
+      [],
+      ["data", "allContentfulBlogPost", "edges"],
+      blogPostResponse
+    ).map(blogPost => blogPost.node);
+
+    sitemap.createSitemap({
+      hostname: config.baseUrl,
+      cacheTime: 600000,
+      urls: [
+        ...pages.map(page => ({
+          url: page.route,
+          changefreq: page.changefreq,
+          priority: page.priority
+        })),
+        ...blogPosts.map(blogPost => ({
+          url: `${routes.writing}${blogPost.slug}`,
+          changefreq: "monthly",
+          lastMod: sitemap.formatDate(blogPost.updatedAt),
+          priority: 0.5
+        }))
+      ]
+    })
+  } catch (e) {
+    console.error(e);
+  }
+}

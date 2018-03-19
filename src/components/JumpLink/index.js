@@ -34,7 +34,7 @@ const JumpLinkIcon = styled.span`
 `;
 
 const JumpLink = ({ title, url, next, prev }) => (
-  <StyledJumpLink next={next} prev={prev} href={url}>
+  <StyledJumpLink next={next} prev={prev} href={url} rel={next ? "next" : "prev"}>
     {prev && <JumpLinkIcon prev className="icon-left-open-big" />}
     {next && <JumpLinkIcon next className="icon-right-open-big" />}
     {title}

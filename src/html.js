@@ -29,6 +29,7 @@ module.exports = class HTML extends Component {
             name="viewport"
             content="width=device-width, initial-scale=1, shrink-to-fit=no"
           />
+          <link rel="dns-prefetch" href="https://www.googletagmanager.com/">
           <link rel="icon" type="image/png" sizes="192x192"  href="/images/icons/icon-192x192.png" />
           <link rel="icon" type="image/png" sizes="96x96" href="/images/icons/icon-96x96.png" />
           <link rel="icon" type="image/png" sizes="16x16" href="/images/icons/icon-16x16.png" />
