@@ -35,6 +35,7 @@ export default class extends Component {
           {/* eslint-disable jsx-a11y/accessible-emoji */}
           <title>🌟 Writing | bekapod.me</title>
           {/* eslint-enable jsx-a11y/accessible-emoji */}
+          <meta name="description" content="A collection of blog posts about front-end development, javascript, React and other web programming things." />
           <link rel="canonical" href={`${config.baseUrl}/writing`} />
         </Helmet>
 

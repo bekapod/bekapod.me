@@ -10,6 +10,7 @@ export default () => (
       {/* eslint-disable jsx-a11y/accessible-emoji */}
       <title>🌟 About | bekapod.me</title>
       {/* eslint-enable jsx-a11y/accessible-emoji */}
+      <meta name="description" content="A page all about me, Becky (bekapod)." />
       <link rel="canonical" href={`${config.baseUrl}/about`} />
     </Helmet>
 

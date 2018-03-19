@@ -35,6 +35,13 @@ export default class extends Component {
           {/* eslint-disable jsx-a11y/accessible-emoji */}
           <title>🌟 {article.title} | Writing | bekapod.me</title>
           {/* eslint-enable jsx-a11y/accessible-emoji */}
+          <meta name="description" content={article.summary.summary} />
+          <meta property="og:url" content={location.href} />
+          <meta property="og:type" content="article" />
+          <meta property="og:title" content={article.title} />
+          <meta property="og:description" content={article.summary.summary} />
+          <meta name="twitter:card" content="summary" />
+          <meta name="twitter:creator" content="@bekapod" />
           <link rel="canonical" href={`${config.baseUrl}/about`} />
         </Helmet>
 
@@ -85,6 +92,9 @@ export const pageQuery = graphql`
       slug
       content {
         content
+      }
+      summary {
+        summary
       }
       createdAt
     }

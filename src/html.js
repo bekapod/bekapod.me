@@ -29,6 +29,10 @@ module.exports = class HTML extends Component {
             name="viewport"
             content="width=device-width, initial-scale=1, shrink-to-fit=no"
           />
+          <link rel="icon" type="image/png" sizes="192x192"  href="/images/icons/icon-192x192.png" />
+          <link rel="icon" type="image/png" sizes="96x96" href="/images/icons/icon-96x96.png" />
+          <link rel="icon" type="image/png" sizes="16x16" href="/images/icons/icon-16x16.png" />
+          <link rel="manifest" href="/manifest.webmanifest" />
           {this.props.headComponents}
           <link rel="stylesheet" href="https://use.typekit.net/jlj1nyv.css" />
           {/* <link rel="stylesheet" href="//basehold.it/33" /> */}

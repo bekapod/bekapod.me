@@ -19,7 +19,7 @@ injectGlobal`
     --color-selection: #fff200;
     --color-gray-dark: #222f3e;
     --color-gray: #D5C9CB;
-    --color-gray-light: ##ecf0f1;
+    --color-gray-light: #ecf0f1;
     --color-white: #FFFFFF;
 
     --font-family-base: 'adobe-caslon-pro', serif;
@@ -61,7 +61,7 @@ injectGlobal`
     font-size: var(--font-size-base);
     font-weight: 400;
     line-height: ${lineHeight("base")};
-    background-color: var(--color-gray-light);
+    background-color: var(--color-white);
     -webkit-font-smoothing: antialiased;
   }
 
