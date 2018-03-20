@@ -43,7 +43,7 @@ export default () => (
     <p>
       I like to write front-end code (obviously), my main focus at work being
       HTML, CSS and Javascript. Outside of work I play around with React, Elixir
-      and more recently Go.
+      and at some point in the near future I would like to try my hand at C++ or Go. 😊
     </p>
     <p>
       My life is not all about code though, I also love my Nintendo Switch,
