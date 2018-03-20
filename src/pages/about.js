@@ -10,7 +10,10 @@ export default () => (
       {/* eslint-disable jsx-a11y/accessible-emoji */}
       <title>🌟 About | bekapod.me</title>
       {/* eslint-enable jsx-a11y/accessible-emoji */}
-      <meta name="description" content="A page all about me, Becky (bekapod)." />
+      <meta
+        name="description"
+        content="A page all about me, Becky (bekapod)."
+      />
       <link rel="canonical" href={`${config.baseUrl}/about`} />
     </Helmet>
 
@@ -43,7 +46,11 @@ export default () => (
     <p>
       I like to write front-end code (obviously), my main focus at work being
       HTML, CSS and Javascript. Outside of work I play around with React, Elixir
-      and at some point in the near future I would like to try my hand at C++ or Go. 😊
+      and at some point in the near future I would like to try my hand at C++ or
+      Go.{" "}
+      <span role="img" aria-label="Smiley face emoji">
+        😊
+      </span>
     </p>
     <p>
       My life is not all about code though, I also love my Nintendo Switch,
