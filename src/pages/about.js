@@ -46,8 +46,8 @@ export default () => (
     <p>
       I like to write front-end code (obviously), my main focus at work being
       HTML, CSS and Javascript. Outside of work I play around with React, Elixir
-      and at some point in the near future I would like to try my hand at C++ or
-      Go.{" "}
+      and at some point in the near future I would like to try my hand at C++
+      and Electronics.{" "}
       <span role="img" aria-label="Smiley face emoji">
         😊
       </span>

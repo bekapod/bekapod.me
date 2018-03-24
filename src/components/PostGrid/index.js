@@ -4,14 +4,22 @@ import styled from "styled-components";
 import MiniPost from "../MiniPost";
 
 const StyledPostGrid = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: var(--grid-gutters);
+  display: flex;
+  justify-content: center;
+`;
+
+const PostGridItem = styled.div`
+  margin-right: var(--grid-gutters);
+  width: calc(100% / 3 - (var(--grid-gutters) * 2));
 `;
 
 const PostGrid = ({ posts }) => (
   <StyledPostGrid>
-    {posts.map(post => <MiniPost box post={post} />)}
+    {posts.map(post => (
+      <PostGridItem>
+        <MiniPost key={post.id} box post={post} />
+      </PostGridItem>
+    ))}
   </StyledPostGrid>
 );
 

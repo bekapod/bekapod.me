@@ -42,12 +42,30 @@ export default class extends Component {
           <meta property="og:description" content={article.summary.summary} />
           <meta name="twitter:card" content="summary" />
           <meta name="twitter:creator" content="@bekapod" />
-          <link rel="canonical" href={`${config.baseUrl}/about`} />
+          <link
+            rel="canonical"
+            href={`${config.baseUrl}${routes.writing}${article.slug}`}
+          />
+          <script
+            type="application/ld+json"
+            innerHtml={`{
+            "@context": "http://schema.org",
+              "@type": "NewsArticle",
+              "headline": ${article.title},
+              "datePublished": ${article.publishDate},
+              "dateModified": ${article.updatedAt},
+              "author": {
+                "@type": "Person",
+                "name": "Becky Jones"
+              },
+              "description": ${article.summary.summary}
+          }`}
+          />
         </Helmet>
 
         <article>
           <h1>{article.title}</h1>
-          <PostDate date={article.createdAt} />
+          <PostDate date={article.publishDate} />
           <Markdown
             source={pathOr("", ["content", "content"])(article)}
             renderers={{
@@ -96,7 +114,8 @@ export const pageQuery = graphql`
       summary {
         summary
       }
-      createdAt
+      publishDate
+      updatedAt
     }
 
     next: contentfulBlogPost(id: { eq: $next }) {

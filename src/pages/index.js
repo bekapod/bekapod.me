@@ -72,7 +72,10 @@ export default class extends Component {
             🌟 Becky Jones, bekapod, front-end developer | bekapod.me
           </title>
           {/* eslint-enable jsx-a11y/accessible-emoji */}
-          <meta name="description" content="A blog about front-end development, javascript, React and other web programming things." />
+          <meta
+            name="description"
+            content="A blog about front-end development, javascript, React and other web programming things."
+          />
           <link rel="canonical" href={config.baseUrl} />
         </Helmet>
 
@@ -103,17 +106,18 @@ export default class extends Component {
 export const pageQuery = graphql`
   query latestQuery {
     latest: allContentfulBlogPost(
-      sort: { fields: [createdAt], order: DESC }
+      sort: { fields: [publishDate], order: DESC }
       limit: 3
     ) {
       edges {
         node {
+          id
           title
           slug
           summary {
             summary
           }
-          createdAt
+          publishDate
         }
       }
     }

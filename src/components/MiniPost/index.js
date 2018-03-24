@@ -7,7 +7,9 @@ import routes from "../../routes";
 import { lineHeight } from "../../helpers/verticalRhythm";
 
 const StyledMiniPost = styled(Link)`
-  padding: calc(var(--spacing-lg) - (var(--border-links) / 2)) var(--spacing-lg);
+  padding: var(--spacing-lg);
+  text-decoration: none;
+  border-bottom: 2px solid var(--color-secondary);
 
   ${props =>
     props.box
@@ -47,7 +49,7 @@ const MiniPost = ({ post, box }) => (
   <StyledMiniPost to={`${routes.writing}${post.slug}`} box={box}>
     <Title>{post.title}</Title>
     <PostDateWrapper>
-      <PostDate date={post.createdAt} />
+      <PostDate date={post.publishDate} />
     </PostDateWrapper>
     <Summary box={box}>{post.summary.summary}</Summary>
   </StyledMiniPost>
@@ -57,7 +59,7 @@ MiniPost.propTypes = {
   post: PropTypes.shape({
     title: PropTypes.string.isRequired,
     slug: PropTypes.string.isRequired,
-    createdAt: PropTypes.string.isRequired,
+    publishDate: PropTypes.string.isRequired,
     summary: PropTypes.shape({
       summary: PropTypes.string.isRequired
     })

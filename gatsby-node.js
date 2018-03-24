@@ -17,7 +17,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
   return new Promise((resolve, reject) => {
     graphql(`
       {
-        allContentfulBlogPost(sort: { fields: createdAt, order: DESC }) {
+        allContentfulBlogPost(sort: { fields: publishDate, order: DESC }) {
           edges {
             node {
               id
@@ -74,7 +74,7 @@ exports.onPostBuild = async ({ graphql }) => {
   try {
     const blogPostResponse = await graphql(`
       {
-        allContentfulBlogPost(sort: { fields: createdAt, order: DESC }) {
+        allContentfulBlogPost(sort: { fields: publishDate, order: DESC }) {
           edges {
             node {
               slug

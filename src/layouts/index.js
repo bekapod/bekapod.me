@@ -45,8 +45,6 @@ injectGlobal`
     --height-footer: auto;
 
     --size-zigzag: 16.5px;
-
-    --border-links: 2px;
   }
 
   ${media.medium`
@@ -130,8 +128,8 @@ injectGlobal`
   a {
     display: inline-block;
     color: var(--color-secondary);
-    text-decoration: none;
-    border-bottom: var(--border-links) solid currentColor;
+    text-decoration: underline wavy;
+    text-decoration-skip-ink: auto;
     background-size: 100% 200%;
     background-image: linear-gradient(to bottom, transparent 50%, var(--color-tertiary) 50%);
     transition: all 0.25s ease-out;
@@ -175,7 +173,7 @@ const Layout = ({ children }) => (
 );
 
 Layout.propTypes = {
-  children: PropTypes.element.isRequired
+  children: PropTypes.func.isRequired
 };
 
 export default Layout;

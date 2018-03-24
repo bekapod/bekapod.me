@@ -35,7 +35,10 @@ export default class extends Component {
           {/* eslint-disable jsx-a11y/accessible-emoji */}
           <title>🌟 Writing | bekapod.me</title>
           {/* eslint-enable jsx-a11y/accessible-emoji */}
-          <meta name="description" content="A collection of blog posts about front-end development, javascript, React and other web programming things." />
+          <meta
+            name="description"
+            content="A collection of blog posts about front-end development, javascript, React and other web programming things."
+          />
           <link rel="canonical" href={`${config.baseUrl}/writing`} />
         </Helmet>
 
@@ -49,15 +52,16 @@ export default class extends Component {
 /* eslint-disable no-undef */
 export const pageQuery = graphql`
   query allQuery {
-    all: allContentfulBlogPost(sort: { fields: [createdAt], order: DESC }) {
+    all: allContentfulBlogPost(sort: { fields: [publishDate], order: DESC }) {
       edges {
         node {
+          id
           title
           slug
           summary {
             summary
           }
-          createdAt
+          publishDate
         }
       }
     }

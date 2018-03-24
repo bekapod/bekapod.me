@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import MiniPost from "../MiniPost";
 
 const PostList = ({ posts }) => (
-  <div>{posts.map(post => <MiniPost post={post} />)}</div>
+  <div>{posts.map(post => <MiniPost key={post.id} post={post} />)}</div>
 );
 
 PostList.propTypes = {

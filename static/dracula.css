@@ -19,12 +19,14 @@
 
 .hljs-built_in,
 .hljs-selector-tag,
+.hljs-selector-class,
 .hljs-section,
 .hljs-link {
   color: #8be9fd;
 }
 
-.hljs-keyword {
+.hljs-keyword,
+.hljs-selector-pseudo {
   color: #ff79c6;
 }
 
