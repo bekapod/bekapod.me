@@ -1,7 +1,6 @@
 /* eslint-disable react/prefer-stateless-function */
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import Markdown from "react-markdown";
 import pathOr from "ramda/src/pathOr";
 import { Helmet } from "react-helmet";
 import { createClient } from "contentful";
@@ -10,7 +9,6 @@ import routes from "../routes";
 import config from "../config";
 import PageContent from "../components/PageContent";
 import PostDate from "../components/PostDate";
-import Code from "../components/Code";
 
 export default class extends Component {
   propTypes = {
@@ -81,10 +79,9 @@ export default class extends Component {
           <article>
             <h1>{article.fields.title}</h1>
             <PostDate date={article.sys.publishDate} />
-            <Markdown
-              source={pathOr("", ["fields", "content"])(article)}
-              renderers={{
-                code: Code
+            <div
+              dangerouslySetInnerHTML={{
+                __html: article.fields.content
               }}
             />
           </article>
