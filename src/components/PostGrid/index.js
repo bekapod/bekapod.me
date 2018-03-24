@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import MiniPost from "../MiniPost";
+import * as variables from "../../helpers/variables";
 
 const StyledPostGrid = styled.div`
   display: flex;
@@ -9,8 +10,8 @@ const StyledPostGrid = styled.div`
 `;
 
 const PostGridItem = styled.div`
-  margin-right: var(--grid-gutters);
-  width: calc(100% / 3 - (var(--grid-gutters) * 2));
+  margin-right: ${variables.gutters.grid}px;
+  width: calc(100% / 3 - (${variables.gutters.grid}px * 2));
 `;
 
 const PostGrid = ({ posts }) => (

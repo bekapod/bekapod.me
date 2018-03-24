@@ -5,19 +5,20 @@ import Link from "gatsby-link";
 import PostDate from "../../components/PostDate";
 import routes from "../../routes";
 import { lineHeight } from "../../helpers/verticalRhythm";
+import * as variables from "../../helpers/variables";
 
 const StyledMiniPost = styled(Link)`
-  padding: var(--spacing-lg);
+  padding: ${variables.spacing.lg}px;
   text-decoration: none;
-  border-bottom: 2px solid var(--color-secondary);
+  border-bottom: 2px solid ${variables.colors.secondary};
 
   ${props =>
     props.box
       ? `
-    background-color: var(--color-gray);
+    background-color: ${variables.colors.gray};
   `
       : `
-    margin: 0 calc(var(--spacing-lg) * -1);
+    margin: 0 calc(${variables.spacing.lg}px * -1);
   `};
 `;
 
@@ -27,22 +28,22 @@ const Title = styled.h2`
 
 const Summary = styled.p`
   margin: 0;
-  color: var(--color-gray-dark);
+  color: ${variables.colors.grayDark};
 
   ${props =>
     props.box
       ? `
-    font-size: var(--font-size-sm);
+    font-size: ${variables.fontSizes.sm}px;
     line-height: ${lineHeight("sm")};
   `
       : `
-    font-size: var(--font-size-base);
+    font-size: ${variables.fontSizes.base}px;
     line-height: ${lineHeight("base")};
   `};
 `;
 
 const PostDateWrapper = styled.div`
-  margin-bottom: var(--spacing-lg);
+  margin-bottom: ${variables.spacing.lg}px;
 `;
 
 const MiniPost = ({ post, box }) => (

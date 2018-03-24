@@ -1,43 +1,45 @@
 // @flow
 import React from "react";
 import styled from "styled-components";
-import { media } from "../../helpers/media";
 import Navigation from "../Navigation";
+import { media } from "../../helpers/media";
+import * as variables from "../../helpers/variables";
 
 const StyledHeader = styled.header`
   position: relative;
-  height: var(--height-header);
-  background-color: var(--color-primary);
+  height: auto;
+  background-color: ${variables.colors.primary};
 
   &::after {
     content: "";
     position: absolute;
     left: 0;
-    bottom: calc(var(--size-zigzag) * -1);
+    bottom: calc(${variables.sizes.zigzag}px * -1);
     width: 100%;
-    height: var(--size-zigzag);
+    height: ${variables.sizes.zigzag}px;
     background: linear-gradient(
         -45deg,
-        transparent var(--size-zigzag),
-        var(--color-primary) 0
+        transparent ${variables.sizes.zigzag}px,
+        ${variables.colors.primary} 0
       ),
       linear-gradient(
         45deg,
-        transparent var(--size-zigzag),
-        var(--color-primary) 0
+        transparent ${variables.sizes.zigzag}px,
+        ${variables.colors.primary} 0
       );
     background-repeat: repeat-x;
     background-position: left bottom;
-    background-size: var(--size-zigzag) var(--size-zigzag);
+    background-size: ${variables.sizes.zigzag}px ${variables.sizes.zigzag}px;
   }
 
   a,
   a:hover {
-    color: var(--color-white);
+    color: ${variables.colors.white};
   }
 
   ${media.medium`
-    padding: 0 var(--page-gutters);
+    height: ${variables.sizes.header}px;
+    padding: 0 ${variables.gutters.page}px;
   `};
 `;
 

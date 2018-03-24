@@ -7,6 +7,7 @@ import { Helmet } from "react-helmet";
 import PostGrid from "../components/PostGrid";
 import config from "../config";
 import { media } from "../helpers/media";
+import { spacing } from "../helpers/variables";
 
 const Home = styled.main`
   box-sizing: border-box;
@@ -14,8 +15,8 @@ const Home = styled.main`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: calc(100vh - var(--height-header) - var(--height-footer));
-  padding: var(--spacing-xxl) 0;
+  min-height: 100vh;
+  padding: ${spacing.xxl}px 0;
 `;
 
 const Title = styled.h1`
@@ -35,7 +36,7 @@ const Description = styled.p`
 
 const PostGridWrapper = styled.div`
   width: 90%;
-  margin-top: var(--spacing-lg);
+  margin-top: ${spacing.lg}px;
 
   ${media.medium`
     width: 80%;
