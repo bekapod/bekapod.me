@@ -1,5 +1,5 @@
 module.exports = {
   disqusShortName: "bekapod",
-  disqusPageUrl: "https://bekapod.me",
-  baseUrl: "https://bekapod.me"
+  disqusPageUrl: "https://www.bekapod.me",
+  baseUrl: "https://www.bekapod.me"
 };
