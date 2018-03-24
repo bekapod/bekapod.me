@@ -56,14 +56,14 @@ module.exports = class HTML extends Component {
           {css}
           <script
             dangerouslySetInnerHTML={{
-              __html: `${process.env.TAG_MANAGER_SCRIPT}`
+              __html: `${process.env.GATSBY_TAG_MANAGER_SCRIPT}`
             }}
           />
         </head>
         <body {...this.props.bodyAttributes}>
           <noscript
             dangerouslySetInnerHTML={{
-              __html: `<iframe src='${process.env.TAG_MANAGER_NOSCRIPT}'
+              __html: `<iframe src='${process.env.GATSBY_TAG_MANAGER_NOSCRIPT}'
           height='0' width='0' style='display:none;visibility:hidden'></iframe>`
             }}
           />
