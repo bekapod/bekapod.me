@@ -23,7 +23,7 @@ function generateXml({ urls, hostname }) {
 
 function createSitemap({ hostname, urls }) {
   const xml = generateXml({ urls, hostname });
-  fs.writeFile("./static/sitemap.xml", xml, () =>
+  fs.writeFile("./public/sitemap.xml", xml, () =>
     console.log("Sitemap generated")
   );
 }
