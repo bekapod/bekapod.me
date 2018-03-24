@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { lineHeight } from "../../helpers/verticalRhythm";
+import * as variables from "../../helpers/variables";
 
 const StyledFooter = styled.footer`
   position: relative;
@@ -8,34 +9,34 @@ const StyledFooter = styled.footer`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: var(--height-footer);
-  color: var(--color-white);
-  font-family: var(--font-family-accent);
-  font-size: var(--font-size-sm);
+  height: auto;
+  color: ${variables.colors.white};
+  font-family: ${variables.fonts.accent};
+  font-size: ${variables.fontSizes.sm}px;
   font-weight: 400;
   line-height: ${lineHeight("sm")};
-  background-color: var(--color-secondary);
+  background-color: ${variables.colors.secondary};
 
   &::after {
     content: "";
     position: absolute;
     left: 0;
-    top: calc(var(--size-zigzag) * -1);
+    top: calc(${variables.sizes.zigzag}px * -1);
     width: 100%;
-    height: var(--size-zigzag);
+    height: ${variables.sizes.zigzag}px;
     background: linear-gradient(
         -45deg,
-        var(--color-secondary) var(--size-zigzag),
+        ${variables.colors.secondary} ${variables.sizes.zigzag}px,
         transparent 0
       ),
       linear-gradient(
         45deg,
-        var(--color-secondary) var(--size-zigzag),
+        ${variables.colors.secondary} ${variables.sizes.zigzag}px,
         transparent 0
       );
     background-repeat: repeat-x;
     background-position: left top;
-    background-size: var(--size-zigzag) 23px;
+    background-size: ${variables.sizes.zigzag}px 23px;
   }
 
   p:not(:last-child) {

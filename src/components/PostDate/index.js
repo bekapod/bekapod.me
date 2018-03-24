@@ -3,12 +3,13 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 import moment from "moment";
 import { lineHeight } from "../../helpers/verticalRhythm";
+import * as variables from "../../helpers/variables";
 
 const StyledPostDate = styled.time`
   display: block;
-  color: var(--color-gray-dark);
-  font-family: var(--font-family-accent);
-  font-size: var(--font-size-sm);
+  color: ${variables.colors.grayDark};
+  font-family: ${variables.fonts.accent};
+  font-size: ${variables.fontSizes.sm}px;
   font-style: italic;
   line-height: ${lineHeight("sm")};
 `;

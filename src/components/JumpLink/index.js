@@ -3,13 +3,14 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 import { media } from "../../helpers/media";
 import { lineHeight } from "../../helpers/verticalRhythm";
+import * as variables from "../../helpers/variables";
 
 const StyledJumpLink = styled.a`
   display: flex;
   align-items: center;
   margin-left: ${props => (props.next ? "auto" : 0)};
   padding: 0;
-  font-family: var(--font-family-accent);
+  font-family: ${variables.fonts.accent};
   font-weight: 600;
   line-height: ${lineHeight("base")};
   text-transform: uppercase;
@@ -17,7 +18,7 @@ const StyledJumpLink = styled.a`
   border-bottom: none;
 
   &:hover {
-    color: var(--color-primary);
+    color: ${variables.colors.primary};
   }
 
   ${media.medium`
@@ -34,7 +35,12 @@ const JumpLinkIcon = styled.span`
 `;
 
 const JumpLink = ({ title, url, next, prev }) => (
-  <StyledJumpLink next={next} prev={prev} href={url} rel={next ? "next" : "prev"}>
+  <StyledJumpLink
+    next={next}
+    prev={prev}
+    href={url}
+    rel={next ? "next" : "prev"}
+  >
     {prev && <JumpLinkIcon prev className="icon-left-open-big" />}
     {next && <JumpLinkIcon next className="icon-right-open-big" />}
     {title}

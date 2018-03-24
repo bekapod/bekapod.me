@@ -4,14 +4,15 @@ import styled from "styled-components";
 import Link from "gatsby-link";
 import { media } from "../../helpers/media";
 import { lineHeight } from "../../helpers/verticalRhythm";
+import * as variables from "../../helpers/variables";
 
 const StyledNavigation = styled.nav`
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  font-family: var(--font-family-accent);
-  font-size: var(--font-size-sm);
+  font-family: ${variables.fonts.accent};
+  font-size: ${variables.fontSizes.sm}px;
   line-height: ${lineHeight("sm")};
 
   > * {
@@ -23,8 +24,8 @@ const StyledNavigation = styled.nav`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: var(--spacing-xs) var(--spacing-xs);
-    padding: var(--spacing-xs) 0;
+    margin: ${variables.spacing.xs}px;
+    padding: ${variables.spacing.xs}px 0;
     font-weight: 700;
     text-align: center;
     text-decoration: none;
@@ -34,7 +35,7 @@ const StyledNavigation = styled.nav`
     transition-duration: 0s;
 
     span:last-child {
-      padding: var(--spacing-xs);
+      padding: ${variables.spacing.xs}px;
       border: 0 solid transparent;
       border-width: 3px 0;
     }
@@ -56,8 +57,8 @@ const StyledNavigation = styled.nav`
     }
 
     a {
-      margin: var(--spacing-xs) var(--spacing-sm);
-      padding: var(--spacing-sm) var(--spacing-sm);
+      margin: ${variables.spacing.xs}px ${variables.spacing.sm}px;
+      padding: ${variables.spacing.sm}px;
     }
   `};
 `;
@@ -68,7 +69,7 @@ const NavigationMenu = styled.div`
   justify-content: center;
   align-items: center;
   order: 2;
-  padding: var(--spacing-sm) 0;
+  padding: ${variables.spacing.sm}px 0;
 
   a {
     width: 85px;
@@ -98,7 +99,7 @@ const NavigationSocial = styled.div`
 const NavigationIcon = styled.span`
   font-size: 1.25em;
   font-weight: 400;
-  margin-bottom: var(--spacing-xs);
+  margin-bottom: ${variables.spacing.xs}px;
 
   &:last-child {
     margin-bottom: 0;
