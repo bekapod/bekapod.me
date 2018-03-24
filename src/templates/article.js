@@ -1,14 +1,11 @@
-/* eslint-disable react/prefer-stateless-function */
+/* eslint-disable react/prefer-stateless-function, react/no-danger */
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import Markdown from "react-markdown";
-import pathOr from "ramda/src/pathOr";
 import { Helmet } from "react-helmet";
 import routes from "../routes";
 import config from "../config";
 import PageContent from "../components/PageContent";
 import PostDate from "../components/PostDate";
-import Code from "../components/Code";
 import Comments from "../components/Comments";
 import JumpLinkWrapper from "../components/JumpLinkWrapper";
 import JumpLink from "../components/JumpLink";
@@ -66,10 +63,9 @@ export default class extends Component {
         <article>
           <h1>{article.title}</h1>
           <PostDate date={article.publishDate} />
-          <Markdown
-            source={pathOr("", ["content", "content"])(article)}
-            renderers={{
-              code: Code
+          <div
+            dangerouslySetInnerHTML={{
+              __html: article.content.childMarkdownRemark.html
             }}
           />
         </article>
@@ -109,7 +105,9 @@ export const pageQuery = graphql`
       title
       slug
       content {
-        content
+        childMarkdownRemark {
+          html
+        }
       }
       summary {
         summary

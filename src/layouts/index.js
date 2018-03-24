@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { injectGlobal } from "styled-components";
 import { normalize } from "polished";
+import "prismjs/themes/prism-okaidia.css";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { media } from "../helpers/media";
@@ -155,9 +156,13 @@ injectGlobal`
     background-color: var(--color-gray);
   }
 
-  .hljs {
+  pre code {
+    display: block;
+    overflow-x: auto;
+    color: var(--color-white);
     padding: var(--spacing-md);
     line-height: ${lineHeight("sm")};
+    background-color: var(--color-gray-dark);
   }
 `;
 /* eslint-enable no-unused-expressions */

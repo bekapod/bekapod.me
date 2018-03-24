@@ -8,6 +8,19 @@ module.exports = {
     "gatsby-plugin-styled-components",
     "gatsby-plugin-webpack-bundle-analyzer",
     {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: "gatsby-remark-prismjs",
+            options: {
+              classPrefix: "lang-"
+            }
+          }
+        ]
+      }
+    },
+    {
       resolve: "gatsby-source-contentful",
       options: {
         spaceId: process.env.CONTENTFUL_SPACE_ID,
