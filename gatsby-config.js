@@ -31,21 +31,22 @@ module.exports = {
       resolve: "gatsby-plugin-netlify",
       options: {
         headers: {
-          "/": ["Cache-Control: public, max-age=600"],
-          "/dracula.css": ["Cache-Control: public, max-age=31536000"],
-          "/fonts.css": ["Cache-Control: public, max-age=600"],
+          "/fonts.css": ["Cache-Control: public, max-age=31536000, immutable"],
           "/*": [
             "Strict-Transport-Security: max-age=31536000; includeSubDomains"
           ],
           "/*.css": ["X-Content-Type-Options: nosniff"],
           "/*.js": [
             "Content-Type: text/javascript; charset=utf-8",
-            "Cache-Control: public, max-age=600",
+            "Cache-Control: public, max-age=31536000, immutable",
             "X-Content-Type-Options: nosniff"
           ],
           "/favicon.ico": [
             "Content-Type: image/x-icon",
             "Cache-Control: public, max-age=600"
+          ],
+          "/manifest.webmanifest": [
+            "Content-Type: application/manifest+json; charset=utf-8"
           ]
         }
       }
