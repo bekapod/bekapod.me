@@ -14,7 +14,7 @@ const StyledHeader = styled.header`
     content: "";
     position: absolute;
     left: 0;
-    bottom: calc(${variables.sizes.zigzag}px * -1);
+    bottom: calc((${variables.sizes.zigzag}px - 1px) * -1);
     width: 100%;
     height: ${variables.sizes.zigzag}px;
     background: linear-gradient(
