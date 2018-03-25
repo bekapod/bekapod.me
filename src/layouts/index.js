@@ -74,7 +74,9 @@ injectGlobal`
   }
 
   ${media.medium`
-    font-size: ${variables.fontSizes.xxl}px;
+    h1 {
+      font-size: ${variables.fontSizes.xxl}px;
+    }
   `}
 
   a,
