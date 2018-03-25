@@ -20,7 +20,8 @@ export const fontSizes = {
   base: 22,
   sm: 18,
   md: 32,
-  xl: 64
+  xl: 48,
+  xxl: 64
 };
 
 export const spacing = {

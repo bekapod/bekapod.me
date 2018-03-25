@@ -7,6 +7,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import * as variables from "../helpers/variables";
 import { lineHeight } from "../helpers/verticalRhythm";
+import { media } from "../helpers/media";
 
 /* eslint-disable no-unused-expressions */
 injectGlobal`
@@ -72,6 +73,10 @@ injectGlobal`
     line-height: ${lineHeight("lg")};
   }
 
+  ${media.medium`
+    font-size: ${variables.fontSizes.xxl}px;
+  `}
+
   a,
   strong,
   code {
@@ -123,6 +128,10 @@ injectGlobal`
     padding: ${variables.spacing.md}px;
     line-height: ${lineHeight("sm")};
     background-color: ${variables.colors.grayDark};
+  }
+
+  .lang-text {
+    word-wrap: break-word;
   }
 `;
 /* eslint-enable no-unused-expressions */
