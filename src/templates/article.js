@@ -86,11 +86,7 @@ export default class extends Component {
           )}
         </JumpLinkWrapper>
 
-        <Comments
-          shortname={config.disqusShortName}
-          identifier={article.id}
-          url={`${config.disqusPageUrl}${location.pathname}`}
-        />
+        <Comments shortname={config.disqusShortName} identifier={article.id} />
       </PageContent>
     );
   }
