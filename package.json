@@ -37,13 +37,13 @@
     "serve:build": "http-server public",
     "develop": "gatsby develop",
     "lint": "eslint src/**/*.js src/*.js",
-    "sonarwhal": "sonarwhal",
+    "webhint": "hint",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
-    "@sonarwhal/configuration-web-recommended": "^2.1.0",
-    "@sonarwhal/formatter-codeframe": "^2.0.0",
-    "@sonarwhal/formatter-stylish": "^2.0.0",
+    "@hint/configuration-web-recommended": "^1.1.0",
+    "@hint/formatter-codeframe": "^1.0.0",
+    "@hint/formatter-stylish": "^1.0.0",
     "babel-eslint": "^8.2.2",
     "eslint": "^4.19.0",
     "eslint-config-airbnb": "^16.1.0",
@@ -52,8 +52,8 @@
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-prettier": "^2.6.0",
     "eslint-plugin-react": "^7.7.0",
+    "hint": "^3.2.0",
     "http-server": "^0.11.1",
-    "prettier": "^1.10.2",
-    "sonarwhal": "^1.1.0"
+    "prettier": "^1.10.2"
   }
 }
