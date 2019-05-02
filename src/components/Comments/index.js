@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import ReactDisqusThread from "react-disqus-thread";
+import { DiscussionEmbed } from "disqus-react";
 import { spacing } from "../../helpers/variables";
 
-export default styled(ReactDisqusThread)`
+export default styled(DiscussionEmbed)`
   margin-top: ${spacing.xl}px;
 `;

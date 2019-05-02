@@ -1,9 +1,12 @@
 /* eslint-disable react/prefer-stateless-function */
+import { graphql } from "gatsby";
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import pathOr from "ramda/src/pathOr";
+import prop from "ramda/src/prop";
 import { Helmet } from "react-helmet";
+import Layout from "../components/Layout";
 import PostGrid from "../components/PostGrid";
 import config from "../config";
 import { media } from "../helpers/media";
@@ -61,44 +64,45 @@ export default class extends Component {
   };
 
   render() {
-    const latest = pathOr([], ["latest", "edges"], this.props.data).map(
-      article => article.node
-    );
+    const { data } = this.props;
+    const latest = pathOr([], ["latest", "edges"], data).map(prop("node"));
 
     return (
-      <Home role="main">
-        <Helmet>
-          {/* eslint-disable jsx-a11y/accessible-emoji */}
-          <title>
-            🌟 Becky Jones, bekapod, front-end developer | bekapod.me
-          </title>
-          {/* eslint-enable jsx-a11y/accessible-emoji */}
-          <meta
-            name="description"
-            content="A blog about front-end development, javascript, React and other web programming things."
-          />
-          <link rel="canonical" href={config.baseUrl} />
-        </Helmet>
+      <Layout>
+        <Home role="main">
+          <Helmet>
+            {/* eslint-disable jsx-a11y/accessible-emoji */}
+            <title>
+              🌟 Becky Jones, bekapod, front-end developer | bekapod.me
+            </title>
+            {/* eslint-enable jsx-a11y/accessible-emoji */}
+            <meta
+              name="description"
+              content="A blog about front-end development, javascript, React and other web programming things."
+            />
+            <link rel="canonical" href={config.baseUrl} />
+          </Helmet>
 
-        <Title>
-          {"Hi, I'm Becky "}
-          <span role="img" aria-label="Waving emoji">
-            👋🏻
-          </span>
-        </Title>
+          <Title>
+            {"Hi, I'm Becky "}
+            <span role="img" aria-hidden>
+              👋🏻
+            </span>
+          </Title>
 
-        <Description>
-          This is a blog about front-end development, javascript, React and
-          basically anything else I find interesting at the time. Enjoy!{" "}
-          <span role="img" aria-label="Sparkle emoji">
-            ✨
-          </span>
-        </Description>
+          <Description>
+            This is a blog about front-end development, javascript, React and
+            basically anything else I find interesting at the time. Enjoy!{" "}
+            <span role="img" aria-hidden>
+              ✨
+            </span>
+          </Description>
 
-        <PostGridWrapper>
-          <PostGrid posts={latest} />
-        </PostGridWrapper>
-      </Home>
+          <PostGridWrapper>
+            <PostGrid posts={latest} />
+          </PostGridWrapper>
+        </Home>
+      </Layout>
     );
   }
 }

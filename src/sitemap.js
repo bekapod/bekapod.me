@@ -23,8 +23,10 @@ function generateXml({ urls, hostname }) {
 
 function createSitemap({ hostname, urls }) {
   const xml = generateXml({ urls, hostname });
-  fs.writeFile("./public/sitemap.xml", xml, () =>
-    console.log("Sitemap generated")
+  fs.writeFile(
+    "./public/sitemap.xml",
+    xml,
+    () => console.log("Sitemap generated") // eslint-disable-line no-console
   );
 }
 

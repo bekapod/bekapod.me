@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import Link from "gatsby-link";
-import PostDate from "../../components/PostDate";
+import PostDate from "../PostDate";
 import routes from "../../routes";
 import { lineHeight } from "../../helpers/verticalRhythm";
 import * as variables from "../../helpers/variables";

@@ -12,8 +12,8 @@ const routes = require("./src/routes");
 const sitemap = require("./src/sitemap");
 const config = require("./src/config");
 
-exports.createPages = ({ graphql, boundActionCreators }) => {
-  const { createPage } = boundActionCreators;
+exports.createPages = ({ graphql, actions }) => {
+  const { createPage } = actions;
   return new Promise((resolve, reject) => {
     graphql(`
       {
@@ -55,20 +55,17 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
   });
 };
 
-exports.modifyWebpackConfig = ({ config }) => {
-  config.plugin("moment-locale-en", webpack.ContextReplacementPlugin, [
-    /moment[\/\\]locale$/,
-    /en/
-  ]);
-
-  return config;
+exports.onCreateWebpackConfig = ({ actions }) => {
+  actions.setWebpackConfig({
+    plugins: [new webpack.ContextReplacementPlugin(/moment[/\\]locale$/, /en/)]
+  });
 };
 
 exports.onPostBuild = async ({ graphql }) => {
   const pages = [
-    { route: '/', changefreq: 'weekly', priority: 1 },
-    { route: '/about', changefreq: 'monthly', priority: 0.5 },
-    { route: '/writing', changefreq: 'daily', priority: 0.8 }
+    { route: "/", changefreq: "weekly", priority: 1 },
+    { route: "/about", changefreq: "monthly", priority: 0.5 },
+    { route: "/writing", changefreq: "daily", priority: 0.8 }
   ];
 
   try {
@@ -83,7 +80,7 @@ exports.onPostBuild = async ({ graphql }) => {
           }
         }
       }
-    `)
+    `);
     const blogPosts = pathOr(
       [],
       ["data", "allContentfulBlogPost", "edges"],
@@ -106,8 +103,8 @@ exports.onPostBuild = async ({ graphql }) => {
           priority: 0.5
         }))
       ]
-    })
+    });
   } catch (e) {
-    console.error(e);
+    console.error(e); // eslint-disable-line no-console
   }
-}
+};

@@ -56,8 +56,8 @@ const StyledFooter = styled.footer`
 export default () => (
   <StyledFooter>
     <p>
-      &copy; Rebekah Jones 2018.{" "}
-      <span role="img" aria-label="Heart emoji">
+      &copy; Rebekah Jones 2019.{" "}
+      <span role="img" aria-hidden>
         💖
       </span>
     </p>

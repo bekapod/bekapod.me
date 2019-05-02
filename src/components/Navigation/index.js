@@ -134,7 +134,7 @@ export default () => (
         rel="nofollow noopener noreferrer"
         title="My github page"
       >
-        <NavigationIcon className="icon-github" />
+        <NavigationIcon className="icon-github" aria-hidden />
       </a>
 
       <a
@@ -143,7 +143,7 @@ export default () => (
         rel="nofollow noopener noreferrer"
         title="My twitter feed"
       >
-        <NavigationIcon className="icon-twitter" />
+        <NavigationIcon className="icon-twitter" aria-hidden />
       </a>
 
       <a
@@ -152,7 +152,7 @@ export default () => (
         rel="nofollow noopener noreferrer"
         title="My linkedin profile"
       >
-        <NavigationIcon className="icon-linkedin" />
+        <NavigationIcon className="icon-linkedin" aria-hidden />
       </a>
     </NavigationSocial>
   </StyledNavigation>
