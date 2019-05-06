@@ -9,6 +9,7 @@ import Layout from "../components/Layout";
 import PageContent from "../components/PageContent";
 import PostList from "../components/PostList";
 import config from "../config";
+import routes from "../routes";
 
 export default class extends Component {
   static propTypes = {
@@ -40,9 +41,44 @@ export default class extends Component {
             {/* eslint-enable jsx-a11y/accessible-emoji */}
             <meta
               name="description"
-              content="A collection of blog posts about front-end development, javascript, React and other web programming things."
+              content="A collection of blog posts about front-end engineering, javascript, React and other web programming things."
             />
-            <link rel="canonical" href={`${config.baseUrl}/writing`} />
+            <link
+              rel="canonical"
+              href={`${config.baseUrl}${routes.writing}/`}
+            />
+            <script type="application/ld+json">
+              {`{
+                "@context": "http://schema.org",
+                "@type": "CollectionPage",
+                "breadcrumb": {
+                  "@type": "BreadcrumbList",
+                  "itemListElement": [
+                    {
+                      "@type": "ListItem",
+                      "position": 1,
+                      "item": {
+                        "@id": "${config.baseUrl}/",
+                        "name": "Home"
+                      }
+                    },
+                    {
+                      "@type": "ListItem",
+                      "position": 2,
+                      "item": {
+                        "@id": "${config.baseUrl}${routes.writing}/",
+                        "name": "Writing"
+                      }
+                    }
+                  ]
+                },
+                "publisher": {
+                  "@id": "${config.baseUrl}/about/"
+                },
+                "name": "Writing | bekapod.me",
+                "description": "A collection of blog posts about front-end engineering, javascript, React and other web programming things."
+              }`}
+            </script>
           </Helmet>
 
           <h1>Writing</h1>

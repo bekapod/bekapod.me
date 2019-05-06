@@ -116,12 +116,12 @@ export default () => (
         <span>Home</span>
       </Link>
 
-      <Link to="/about" className="Navigation-me">
+      <Link to="/about/" className="Navigation-me">
         <NavigationIcon className="icon-emo-happy" />
         <span>About</span>
       </Link>
 
-      <Link to="/writing">
+      <Link to="/writing/">
         <NavigationIcon className="icon-feather" />
         <span>Writing</span>
       </Link>

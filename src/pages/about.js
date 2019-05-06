@@ -16,7 +16,40 @@ export default () => (
           name="description"
           content="A page all about me, Becky (bekapod)."
         />
-        <link rel="canonical" href={`${config.baseUrl}/about`} />
+        <link rel="canonical" href={`${config.baseUrl}/about/`} />
+        <script type="application/ld+json">
+          {`{
+            "@id": "${config.baseUrl}/about/",
+            "@context": "http://schema.org",
+            "@type": "AboutPage",
+            "breadcrumb": {
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "item": {
+                    "@id": "${config.baseUrl}/",
+                    "name": "Home"
+                  }
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "item": {
+                    "@id": "${config.baseUrl}/about/",
+                    "name": "About"
+                  }
+                }
+              ]
+            },
+            "publisher": {
+              "@id": "${config.baseUrl}/about/"
+            },
+            "name": "About | bekapod.me",
+            "description": "A page all about me, Becky (bekapod)."
+          }`}
+        </script>
       </Helmet>
 
       <h1>About Me</h1>

@@ -25,16 +25,17 @@ export default class extends Component {
   };
 
   render() {
-    const { location, data } = this.props;
+    const { data } = this.props;
     const { current: article, next, prev } = data;
     const url = `${config.baseUrl}${routes.writing}${article.slug}/`;
+    const title = `${article.title} | Writing | bekapod.me`;
 
     return (
       <Layout>
         <PageContent>
           <Helmet>
             {/* eslint-disable jsx-a11y/accessible-emoji */}
-            <title>🌟 {article.title} | Writing | bekapod.me</title>
+            <title>🌟 {title}</title>
             {/* eslint-enable jsx-a11y/accessible-emoji */}
             <meta name="description" content={article.summary.summary} />
             <meta property="og:url" content={url} />
@@ -47,15 +48,63 @@ export default class extends Component {
             <script type="application/ld+json">
               {`{
                 "@context": "http://schema.org",
-                  "@type": "BlogPosting",
-                  "headline": "${article.title}",
-                  "datePublished": "${article.publishDate}",
-                  "dateModified": "${article.updatedAt}",
-                  "author": {
-                    "@type": "Person",
-                    "name": "Becky Jones"
-                  },
-                  "description": "${article.summary.summary}"
+                "@type": "ItemPage",
+                "breadcrumb": {
+                  "@type": "BreadcrumbList",
+                  "itemListElement": [
+                    {
+                      "@type": "ListItem",
+                      "position": 1,
+                      "item": {
+                        "@id": "${config.baseUrl}/",
+                        "name": "Home"
+                      }
+                    },
+                    {
+                      "@type": "ListItem",
+                      "position": 2,
+                      "item": {
+                        "@id": "${config.baseUrl}${routes.writing}/",
+                        "name": "Writing"
+                      }
+                    },
+                    {
+                      "@type": "ListItem",
+                      "position": 3,
+                      "item": {
+                        "@id": "${url}",
+                        "name": "${article.title}"
+                      }
+                    }
+                  ]
+                },
+                "mainEntity": {
+                  "@id": "${url}"
+                },
+                "publisher": {
+                  "@id": "${config.baseUrl}/about/"
+                },
+                "name": "${title}",
+                "description": "${article.summary.summary}"
+              }`}
+            </script>
+            <script type="application/ld+json">
+              {`{
+                "@context": "http://schema.org",
+                "@id": "${url}",
+                "@type": "BlogPosting",
+                "headline": "${article.title}",
+                "datePublished": "${article.publishDate}",
+                "dateModified": "${article.updatedAt}",
+                "author": {
+                  "@id": "${config.baseUrl}/about/",
+                  "@type": "Person",
+                  "name": "Becky Jones"
+                },
+                "description": "${article.summary.summary}",
+                "publisher": {
+                  "@id": "${config.baseUrl}/about/"
+                }
               }`}
             </script>
           </Helmet>

@@ -73,14 +73,39 @@ export default class extends Component {
           <Helmet>
             {/* eslint-disable jsx-a11y/accessible-emoji */}
             <title>
-              🌟 Becky Jones, bekapod, front-end developer | bekapod.me
+              🌟 Becky Jones, bekapod, front-end engineer | bekapod.me
             </title>
             {/* eslint-enable jsx-a11y/accessible-emoji */}
             <meta
               name="description"
-              content="A blog about front-end development, javascript, React and other web programming things."
+              content="A blog about front-end engineering, javascript, React and other web programming things."
             />
-            <link rel="canonical" href={config.baseUrl} />
+            <link rel="canonical" href={`${config.baseUrl}/`} />
+            <script type="application/ld+json">
+              {`{
+                "@id": "${config.baseUrl}/",
+                "@context": "http://schema.org",
+                "@type": "WebPage",
+                "breadcrumb": {
+                  "@type": "BreadcrumbList",
+                  "itemListElement": [
+                    {
+                      "@type": "ListItem",
+                      "position": 1,
+                      "item": {
+                        "@id": "${config.baseUrl}/",
+                        "name": "Home"
+                      }
+                    }
+                  ]
+                },
+                "publisher": {
+                  "@id": "${config.baseUrl}/about/"
+                },
+                "name": "Becky Jones, bekapod, front-end engineer | bekapod.me",
+                "description": "A blog about front-end engineering, javascript, React and other web programming things."
+              }`}
+            </script>
           </Helmet>
 
           <Title>
