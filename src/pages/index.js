@@ -69,7 +69,7 @@ export default class extends Component {
 
     return (
       <Layout>
-        <Home role="main">
+        <Home>
           <Helmet>
             {/* eslint-disable jsx-a11y/accessible-emoji */}
             <title>

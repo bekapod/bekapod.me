@@ -7,7 +7,7 @@ import config from "../config";
 
 export default () => (
   <Layout>
-    <PageContent role="main">
+    <PageContent>
       <Helmet>
         {/* eslint-disable jsx-a11y/accessible-emoji */}
         <title>🌟 About | bekapod.me</title>

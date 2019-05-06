@@ -33,7 +33,7 @@ export default class extends Component {
 
     return (
       <Layout>
-        <PageContent role="main">
+        <PageContent>
           <Helmet>
             {/* eslint-disable jsx-a11y/accessible-emoji */}
             <title>🌟 Writing | bekapod.me</title>

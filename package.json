@@ -37,7 +37,6 @@
     "serve:build": "http-server public",
     "develop": "gatsby develop",
     "lint": "eslint src/**/*.js src/*.js",
-    "sonarwhal": "sonarwhal",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {

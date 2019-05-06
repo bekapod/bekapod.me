@@ -45,7 +45,7 @@ export default class extends Component {
       process.env.NODE_ENV === "development" &&
       article && (
         <Layout>
-          <PageContent role="main">
+          <PageContent>
             <Helmet>
               {/* eslint-disable jsx-a11y/accessible-emoji */}
               <title>🌟 {article.fields.title} | Writing | bekapod.me</title>

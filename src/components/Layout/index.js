@@ -1,7 +1,5 @@
-/* eslint-disable react/no-danger */
 import React from "react";
 import PropTypes from "prop-types";
-import { Helmet } from "react-helmet";
 import { createGlobalStyle } from "styled-components";
 import { normalize } from "polished";
 import "prismjs/themes/prism-okaidia.css";
@@ -11,7 +9,6 @@ import * as variables from "../../helpers/variables";
 import { lineHeight } from "../../helpers/verticalRhythm";
 import { media } from "../../helpers/media";
 
-/* eslint-disable no-unused-expressions */
 const GlobalStyle = createGlobalStyle`
   ${normalize()}
 
@@ -142,42 +139,6 @@ const GlobalStyle = createGlobalStyle`
 
 const Layout = ({ children }) => (
   <div>
-    <Helmet>
-      <meta charSet="utf-8" />
-      <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1, shrink-to-fit=no"
-      />
-      <link rel="dns-prefetch" href="https://www.googletagmanager.com/" />
-      <link
-        rel="icon"
-        type="image/png"
-        sizes="192x192"
-        href="/images/icons/icon-192x192.png"
-      />
-      <link
-        rel="icon"
-        type="image/png"
-        sizes="96x96"
-        href="/images/icons/icon-96x96.png"
-      />
-      <link
-        rel="icon"
-        type="image/png"
-        sizes="16x16"
-        href="/images/icons/icon-16x16.png"
-      />
-      <link rel="manifest" href="/manifest.webmanifest" />
-      <link rel="stylesheet" href="https://use.typekit.net/jlj1nyv.css" />
-      {/* <link rel="stylesheet" href="//basehold.it/33" /> */}
-      <link rel="stylesheet" href="/fonts.css" />
-      <script
-        dangerouslySetInnerHTML={{
-          __html: `${process.env.GATSBY_TAG_MANAGER_SCRIPT}`
-        }}
-      />
-    </Helmet>
-
     <GlobalStyle />
 
     <Header />
@@ -185,13 +146,6 @@ const Layout = ({ children }) => (
     {children}
 
     <Footer />
-
-    <noscript
-      dangerouslySetInnerHTML={{
-        __html: `<iframe src='${process.env.GATSBY_TAG_MANAGER_NOSCRIPT}'
-          height='0' width='0' style='display:none;visibility:hidden'></iframe>`
-      }}
-    />
   </div>
 );
 

@@ -1,0 +1,4 @@
+{
+  "extends": ["web-recommended"],
+  "formatters": ["codeframe", "stylish"]
+}

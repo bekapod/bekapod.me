@@ -15,7 +15,7 @@ const StyledPostDate = styled.time`
 `;
 
 const PostDate = ({ date }) => (
-  <StyledPostDate time={date}>{moment(date).fromNow()}</StyledPostDate>
+  <StyledPostDate dateTime={date}>{moment(date).fromNow()}</StyledPostDate>
 );
 
 PostDate.propTypes = {
