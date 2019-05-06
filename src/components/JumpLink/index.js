@@ -13,6 +13,7 @@ const StyledJumpLink = styled.a`
   font-family: ${variables.fonts.accent};
   font-weight: 600;
   line-height: ${lineHeight("base")};
+  text-decoration: none;
   text-transform: uppercase;
   background: none;
   border-bottom: none;

@@ -11,6 +11,7 @@ const StyledPostGrid = styled.div`
 `;
 
 const PostGridItem = styled.div`
+  display: flex;
   width: 100%;
 
   ${media.medium`
