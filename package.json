@@ -34,7 +34,7 @@
   "main": "n/a",
   "scripts": {
     "build": "gatsby build",
-    "serve:build": "http-server public",
+    "serve": "gatsby serve",
     "develop": "gatsby develop",
     "lint": "eslint src/**/*.js src/*.js",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -52,7 +52,6 @@
     "eslint-plugin-prettier": "^3.0.1",
     "eslint-plugin-react": "^7.12.4",
     "hint": "^4.5.0",
-    "http-server": "^0.11.1",
     "prettier": "^1.17.0"
   }
 }
