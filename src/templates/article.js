@@ -27,7 +27,7 @@ export default class extends Component {
   render() {
     const { location, data } = this.props;
     const { current: article, next, prev } = data;
-    const url = `${config.baseUrl}${routes.writing}${article.slug}`;
+    const url = `${config.baseUrl}${routes.writing}${article.slug}/`;
 
     return (
       <Layout>
@@ -37,7 +37,7 @@ export default class extends Component {
             <title>🌟 {article.title} | Writing | bekapod.me</title>
             {/* eslint-enable jsx-a11y/accessible-emoji */}
             <meta name="description" content={article.summary.summary} />
-            <meta property="og:url" content={location.href} />
+            <meta property="og:url" content={url} />
             <meta property="og:type" content="article" />
             <meta property="og:title" content={article.title} />
             <meta property="og:description" content={article.summary.summary} />
@@ -47,7 +47,7 @@ export default class extends Component {
             <script type="application/ld+json">
               {`{
                 "@context": "http://schema.org",
-                  "@type": "NewsArticle",
+                  "@type": "BlogPosting",
                   "headline": "${article.title}",
                   "datePublished": "${article.publishDate}",
                   "dateModified": "${article.updatedAt}",
