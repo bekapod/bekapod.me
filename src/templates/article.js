@@ -64,7 +64,7 @@ export default class extends Component {
                       "@type": "ListItem",
                       "position": 2,
                       "item": {
-                        "@id": "${config.baseUrl}${routes.writing}/",
+                        "@id": "${config.baseUrl}${routes.writing}",
                         "name": "Writing"
                       }
                     },
@@ -104,6 +104,9 @@ export default class extends Component {
                 "description": "${article.summary.summary}",
                 "publisher": {
                   "@id": "${config.baseUrl}/about/"
+                },
+                "mainEntityOfPage": {
+                  "@id": "${url}"
                 }
               }`}
             </script>

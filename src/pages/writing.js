@@ -43,10 +43,7 @@ export default class extends Component {
               name="description"
               content="A collection of blog posts about front-end engineering, javascript, React and other web programming things."
             />
-            <link
-              rel="canonical"
-              href={`${config.baseUrl}${routes.writing}/`}
-            />
+            <link rel="canonical" href={`${config.baseUrl}${routes.writing}`} />
             <script type="application/ld+json">
               {`{
                 "@context": "http://schema.org",
@@ -66,14 +63,15 @@ export default class extends Component {
                       "@type": "ListItem",
                       "position": 2,
                       "item": {
-                        "@id": "${config.baseUrl}${routes.writing}/",
+                        "@id": "${config.baseUrl}${routes.writing}",
                         "name": "Writing"
                       }
                     }
                   ]
                 },
                 "publisher": {
-                  "@id": "${config.baseUrl}/about/"
+                  "@id": "${config.baseUrl}/about/",
+                  "@type": "Person"
                 },
                 "name": "Writing | bekapod.me",
                 "description": "A collection of blog posts about front-end engineering, javascript, React and other web programming things."

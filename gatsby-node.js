@@ -40,7 +40,7 @@ exports.createPages = ({ graphql, actions }) => {
 
       blogPosts.forEach((edge, index) => {
         createPage({
-          path: `${routes.writing}${edge.node.slug}`,
+          path: `${routes.writing}${edge.node.slug}/`,
           component: slash(pageTemplate),
           context: {
             current: edge.node.id,
@@ -64,8 +64,8 @@ exports.onCreateWebpackConfig = ({ actions }) => {
 exports.onPostBuild = async ({ graphql }) => {
   const pages = [
     { route: "/", changefreq: "weekly", priority: 1 },
-    { route: "/about", changefreq: "monthly", priority: 0.5 },
-    { route: "/writing", changefreq: "daily", priority: 0.8 }
+    { route: "/about/", changefreq: "monthly", priority: 0.5 },
+    { route: "/writing/", changefreq: "daily", priority: 0.8 }
   ];
 
   try {
@@ -97,7 +97,7 @@ exports.onPostBuild = async ({ graphql }) => {
           priority: page.priority
         })),
         ...blogPosts.map(blogPost => ({
-          url: `${routes.writing}${blogPost.slug}`,
+          url: `${routes.writing}${blogPost.slug}/`,
           changefreq: "monthly",
           lastMod: sitemap.formatDate(blogPost.updatedAt),
           priority: 0.5

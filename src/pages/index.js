@@ -100,7 +100,8 @@ export default class extends Component {
                   ]
                 },
                 "publisher": {
-                  "@id": "${config.baseUrl}/about/"
+                  "@id": "${config.baseUrl}/about/",
+                  "@type": "Person"
                 },
                 "name": "Becky Jones, bekapod, front-end engineer | bekapod.me",
                 "description": "A blog about front-end engineering, javascript, React and other web programming things."

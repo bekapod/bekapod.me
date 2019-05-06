@@ -44,7 +44,8 @@ export default () => (
               ]
             },
             "publisher": {
-              "@id": "${config.baseUrl}/about/"
+              "@id": "${config.baseUrl}/about/",
+              "@type": "Person"
             },
             "name": "About | bekapod.me",
             "description": "A page all about me, Becky (bekapod)."
