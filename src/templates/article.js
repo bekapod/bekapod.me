@@ -48,14 +48,14 @@ export default class extends Component {
               {`{
                 "@context": "http://schema.org",
                   "@type": "NewsArticle",
-                  "headline": ${article.title},
-                  "datePublished": ${article.publishDate},
-                  "dateModified": ${article.updatedAt},
+                  "headline": "${article.title}",
+                  "datePublished": "${article.publishDate}",
+                  "dateModified": "${article.updatedAt}",
                   "author": {
                     "@type": "Person",
                     "name": "Becky Jones"
                   },
-                  "description": ${article.summary.summary}
+                  "description": "${article.summary.summary}"
               }`}
             </script>
           </Helmet>
