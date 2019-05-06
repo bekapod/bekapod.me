@@ -87,6 +87,7 @@ exports.onPostBuild = async ({ graphql }) => {
       blogPostResponse
     ).map(blogPost => blogPost.node);
 
+    console.log("generating sitemap");
     sitemap.createSitemap({
       hostname: config.baseUrl,
       cacheTime: 600000,
@@ -104,6 +105,7 @@ exports.onPostBuild = async ({ graphql }) => {
         }))
       ]
     });
+    console.log("finished generating sitemap");
   } catch (e) {
     console.error(e); // eslint-disable-line no-console
   }
