@@ -43,6 +43,10 @@ export default function HTML(props) {
         <link rel="stylesheet" href="https://use.typekit.net/jlj1nyv.css" />
         {/* <link rel="stylesheet" href="//basehold.it/33" /> */}
         <link rel="stylesheet" href="/fonts.css" />
+        <meta
+          name="google-site-verification"
+          content="sPckqsM0GvxHdHMxEJegnZg3NYABPhPh9BPvmrUNh5w"
+        />
         <script
           dangerouslySetInnerHTML={{
             __html: `${process.env.GATSBY_TAG_MANAGER_SCRIPT}`
