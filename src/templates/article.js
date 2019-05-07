@@ -8,7 +8,6 @@ import config from "../config";
 import Layout from "../components/Layout";
 import PageContent from "../components/PageContent";
 import PostDate from "../components/PostDate";
-import Comments from "../components/Comments";
 import JumpLinkWrapper from "../components/JumpLinkWrapper";
 import JumpLink from "../components/JumpLink";
 
@@ -138,11 +137,6 @@ export default class extends Component {
               />
             )}
           </JumpLinkWrapper>
-
-          <Comments
-            shortname={config.disqusShortName}
-            config={{ identifier: article.id, url, title: article.title }}
-          />
         </PageContent>
       </Layout>
     );
